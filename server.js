@@ -1,11 +1,18 @@
 import express from "express";
 
-const app = express();
+const app = express();   
+const port = process.env.port || 3000;
 
-app.get("/", (req,res)=> {
-    res.send("hello world")
-})
 
-app.listen(3000, ()=>{
-    console.log("surver running on port 3000");
+app.listen(port, ()=>{
+    console.log(`surver running on port ${port}`);
 });
+
+// export function configure(app) {
+//     app.use(express.json());
+
+//     app.use('/api/auth', authRoutes);
+//     app.use('/api/buyers', buyerRoutes);
+//     app.use('/api/sellers', sellerRoutes);
+//     app.use('/api/listings', listingRoutes);
+// } 
