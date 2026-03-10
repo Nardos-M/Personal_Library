@@ -1,11 +1,10 @@
-import express from "express";
+import app from "./app.js";
 
-const app = express();   
-const port = process.env.port || 3000;
+const PORT = process.env.port || 3000;
 
 
-app.listen(port, ()=>{
-    console.log(`surver running on port ${port}`);
+app.listen(PORT, ()=>{
+    console.log(`server running on port ${PORT}`);
 });
 
 // export function configure(app) {
