@@ -1,6 +1,4 @@
-//the people that borrowed from me
-
-import { connectDb } from "./db";
+import { connectDb } from "./db.js";
 
 const mongoose = await connectDb();
 
@@ -16,8 +14,7 @@ const bookSchema = new mongoose.Schema({
         required:true
     },
     notes:{
-        type:String,
-        required:Optional
+        type:String
     },
     borrowedDate:Date,
     returnedDate:Date,
