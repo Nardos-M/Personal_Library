@@ -1,10 +1,12 @@
 import express from "express";
+import bookRoutes from './routes/bookRoutes.js';
 
-const app = express();
-app.use(express.json());
 
-app.get("/", (req,res) =>{
-    res.status(200).json({message: "HELLO WORLD"});
-})
+export function configure(app) {
+    app.use(express.json());
 
-export default app;
+    app.use('/api/books', bookRoutes);
+} 
+
+
+
