@@ -1,11 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import MyListOfBooks from './pages/MyListOfBooks.jsx';
+import NewBook from './pages/NewBook.jsx';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/my-books" replace />} />
       <Route path="/my-books" element={<MyListOfBooks />} />
+      <Route path="/new-books" element={<NewBook />} />
     </Routes>
   );
 }
