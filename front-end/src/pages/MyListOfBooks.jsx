@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllBooks } from "../api";
+import { getAllLoans} from "../api";
 
 function BooksList({book}){
     return(
@@ -21,16 +21,16 @@ function BooksList({book}){
 }
 
 export default function MyListOfBooks(){
-    const [books,setBooks] = useState([])
+    const [loans,setLoans] = useState([])
     const navigate = useNavigate();
 
-    async function loadBooks() {
-        const books = await getAllBooks();
-        setBooks(books)
+    async function loadLoans() {
+        const loans = await getAllLoans();
+        setLoans(loans)
     }
 
     useEffect(()=>{
-        loadBooks();
+        loadLoans();
     },[])
 
     return(
@@ -40,7 +40,7 @@ export default function MyListOfBooks(){
                 <div className="books-header">
                     <h1>My Books</h1>
                 </div>
-                {books.map((book) => (
+                {loans.map((book) => (
                     <BooksList key={book._id} book={book} />
                 ))}
                 <button className="add-button" onClick={() => navigate('/new-books')}>+ Add more Books</button>

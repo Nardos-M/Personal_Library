@@ -1,13 +1,13 @@
-export async function getAllBooks(){
-   const res =  await fetch("/api/books");
+export async function getAllLoans(){
+   const res =  await fetch("/api/loans");
     return await res.json();
 }
 
-export async function createBook(book) {
-    const res = await fetch("/api/books", {
+export async function createLoan(loan) {
+    const res = await fetch("/api/loans", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(book),
+        body: JSON.stringify(loan),
     });
 
     if (!res.ok) {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createBook } from "../api";
+import { createLoan } from "../api";
 
 export default function NewBook() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function NewBook() {
     setError("");
 
     try {
-      await createBook({
+      await createLoan({
         title,
         author,
         lender,
